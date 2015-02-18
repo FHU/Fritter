@@ -16,6 +16,11 @@ namespace Fritter.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Bio { get; set; } 
+        public string ImageName { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -29,5 +34,7 @@ namespace Fritter.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Fritter.Models.Treat> Treats { get; set; }
     }
 }

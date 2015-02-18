@@ -7,6 +7,8 @@ namespace Fritter.Models
 {
     public class Treat
     {
+        public int TreatId { get; set; }
+
         public string Text { get; set; }
         
         //TO DO: This should be the User class NOT string
@@ -25,8 +27,9 @@ namespace Fritter.Models
             this.Timestamp = DateTime.Now;
         }
 
-        public Treat(string Text = "", string UserName = "")
+        public Treat(int id, string Text = "", string UserName = "")
         {
+            this.TreatId = id;
             this.Text = Text;
             this.UserName = UserName;
             this.Timestamp = DateTime.Now;
