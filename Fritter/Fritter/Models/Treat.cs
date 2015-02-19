@@ -12,7 +12,8 @@ namespace Fritter.Models
         public string Text { get; set; }
         
         //TO DO: This should be the User class NOT string
-        public string UserName { get; set; }
+        public string ApplicationUserId { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
         
         public DateTime Timestamp { get; set; }
 
@@ -31,7 +32,7 @@ namespace Fritter.Models
         {
             this.TreatId = id;
             this.Text = Text;
-            this.UserName = UserName;
+            
             this.Timestamp = DateTime.Now;
         }
     }

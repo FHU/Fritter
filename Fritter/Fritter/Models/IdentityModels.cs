@@ -21,6 +21,9 @@ namespace Fritter.Models
         public string LastName { get; set; }
         public string Bio { get; set; } 
         public string ImageName { get; set; }
+
+        public virtual System.Collections.Generic.List<Treat> Treats { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

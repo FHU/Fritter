@@ -7,6 +7,10 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Fritter.Models;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 
 namespace Fritter.Controllers
 {
@@ -46,8 +50,20 @@ namespace Fritter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TreatId,Text,UserName,Timestamp")] Treat treat)
+        public async Task<ActionResult> Create([Bind(Include = "Text")] Treat treat)
         {
+            if (!Request.IsAuthenticated)
+            {
+                return HttpNotFound();
+            }
+
+            ApplicationUserManager UserManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            var user = await UserManager.FindByNameAsync(User.Identity.Name);
+
+            treat.ApplicationUserId = user.Id;
+            string userID = user.Id;
+
             if (ModelState.IsValid)
             {
                 db.Treats.Add(treat);
@@ -78,7 +94,7 @@ namespace Fritter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TreatId,Text,UserName,Timestamp")] Treat treat)
+        public ActionResult Edit([Bind(Include = "Text")] Treat treat)
         {
             if (ModelState.IsValid)
             {

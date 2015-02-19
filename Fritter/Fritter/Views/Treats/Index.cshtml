@@ -15,7 +15,13 @@
             @Html.DisplayNameFor(model => model.Text)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserName)
+            @Html.DisplayNameFor(model => model.ApplicationUser.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationUser.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationUser.LastName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Timestamp)
@@ -29,7 +35,13 @@
             @Html.DisplayFor(modelItem => item.Text)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UserName)
+            @Html.DisplayFor(modelItem => item.ApplicationUser.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationUser.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationUser.LastName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Timestamp)

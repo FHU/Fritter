@@ -176,6 +176,14 @@
     <Compile Include="Migrations\201502181657131_treats.Designer.cs">
       <DependentUpon>201502181657131_treats.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502182252064_applicationUser.cs" />
+    <Compile Include="Migrations\201502182252064_applicationUser.Designer.cs">
+      <DependentUpon>201502182252064_applicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502182316449_appUserIDString.cs" />
+    <Compile Include="Migrations\201502182316449_appUserIDString.Designer.cs">
+      <DependentUpon>201502182316449_appUserIDString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -270,6 +278,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502181657131_treats.resx">
       <DependentUpon>201502181657131_treats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502182252064_applicationUser.resx">
+      <DependentUpon>201502182252064_applicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502182316449_appUserIDString.resx">
+      <DependentUpon>201502182316449_appUserIDString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
