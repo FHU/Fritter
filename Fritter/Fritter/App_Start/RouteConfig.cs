@@ -13,21 +13,11 @@ namespace Fritter
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapMvcAttributeRoutes();
-
             routes.MapRoute(
                 name: "Default",
-                url: "Account/{controller}/{action}/",
+                url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-
-            routes.MapRoute(
-                name: "Treat",
-                url: "{userName}",
-                defaults: new { controller = "Treat", action = "Index", userName = UrlParameter.Optional}
-                );
-
-            
         }
     }
 }

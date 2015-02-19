@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D2EDCA13-BB95-4210-A07F-E05E5BC89308}</ProjectGuid>
+    <ProjectGuid>{DC8AD52A-3008-4BDC-88BD-A3E288D7F093}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -164,10 +164,23 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\TreatController.cs" />
+    <Compile Include="Controllers\TreatsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502191522477_InitialCreate.cs" />
+    <Compile Include="Migrations\201502191522477_InitialCreate.Designer.cs">
+      <DependentUpon>201502191522477_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502191536057_addedProfileFieldsToAppUser.cs" />
+    <Compile Include="Migrations\201502191536057_addedProfileFieldsToAppUser.Designer.cs">
+      <DependentUpon>201502191536057_addedProfileFieldsToAppUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502191602191_addedTreats.cs" />
+    <Compile Include="Migrations\201502191602191_addedTreats.Designer.cs">
+      <DependentUpon>201502191602191_addedTreats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -242,16 +255,29 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Treat\Index.cshtml" />
-    <Content Include="Views\Treat\SingleUserTreats.cshtml" />
+    <Content Include="Views\Treats\Create.cshtml" />
+    <Content Include="Views\Treats\Delete.cshtml" />
+    <Content Include="Views\Treats\Details.cshtml" />
+    <Content Include="Views\Treats\Edit.cshtml" />
+    <Content Include="Views\Treats\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Treats\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201502191522477_InitialCreate.resx">
+      <DependentUpon>201502191522477_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502191536057_addedProfileFieldsToAppUser.resx">
+      <DependentUpon>201502191536057_addedProfileFieldsToAppUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502191602191_addedTreats.resx">
+      <DependentUpon>201502191602191_addedTreats.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -269,7 +295,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53653</DevelopmentServerPort>
+          <DevelopmentServerPort>58265</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:53653/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

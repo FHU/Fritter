@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace Fritter.Models
 {
@@ -16,6 +17,15 @@ namespace Fritter.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Bio { get; set; }
+        public string ProfilePictureName { get; set; }
+
+        public virtual List<Treat> Treats { get; set; }
+
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -29,5 +39,7 @@ namespace Fritter.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Fritter.Models.Treat> Treats { get; set; }
     }
 }
