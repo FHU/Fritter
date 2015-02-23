@@ -14,8 +14,8 @@ namespace Fritter.Models
         public string Text { get; set; }
         public DateTime TimeStamp { get; set; }
 
-        ApplicationUser Creator { get; set; }
-        string CreatorID { get; set; }
+        public ApplicationUser Creator { get; set; }
+        public string CreatorID { get; set; }
 
     }
 }

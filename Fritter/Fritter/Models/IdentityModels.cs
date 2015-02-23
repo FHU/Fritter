@@ -41,5 +41,7 @@ namespace Fritter.Models
         }
 
         public System.Data.Entity.DbSet<Fritter.Models.Treat> Treats { get; set; }
+
+        protected UserManager<ApplicationUser> UserManager { get; set; }
     }
 }
